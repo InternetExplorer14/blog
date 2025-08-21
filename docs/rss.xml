@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Internet Explorer 14</title><link>https://InternetExplorer14.github.io/blog</link><description>Hanser!</description><copyright>Internet Explorer 14</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.luogu.com.cn/upload/usericon/1303746.png</url><title>avatar</title><link>https://InternetExplorer14.github.io/blog</link></image><lastBuildDate>Thu, 21 Aug 2025 11:53:38 +0000</lastBuildDate><managingEditor>Internet Explorer 14</managingEditor><ttl>60</ttl><webMaster>Internet Explorer 14</webMaster><item><title>蒟蒻的来做梦8.21总结</title><link>https://InternetExplorer14.github.io/blog/post/ju-ruo-de-lai-zuo-meng-8.21-zong-jie.html</link><description>[T639096 落落的去养植物](https://www.luogu.com.cn/problem/T639096?contestId=271047)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Internet Explorer 14</title><link>https://InternetExplorer14.github.io/blog</link><description>Hanser!</description><copyright>Internet Explorer 14</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.luogu.com.cn/upload/usericon/1303746.png</url><title>avatar</title><link>https://InternetExplorer14.github.io/blog</link></image><lastBuildDate>Thu, 21 Aug 2025 12:00:47 +0000</lastBuildDate><managingEditor>Internet Explorer 14</managingEditor><ttl>60</ttl><webMaster>Internet Explorer 14</webMaster><item><title>蒟蒻的来做梦8.21总结</title><link>https://InternetExplorer14.github.io/blog/post/ju-ruo-de-lai-zuo-meng-8.21-zong-jie.html</link><description>[T639096 落落的去养植物](https://www.luogu.com.cn/problem/T639096?contestId=271047)
 
 ```cpp
 ```
@@ -25,6 +25,48 @@ int main(){
 		}
 		cout&lt;&lt;cnt+1;//0-&gt;0
 	}
+	return 0;
+}
+```
+[T643658 落落的去的数学题1](https://www.luogu.com.cn/problem/T643658?contestId=271047)
+
+```cpp
+```
+[T638482 小梦的铁索连环](https://www.luogu.com.cn/problem/T638482?contestId=271047)
+
+```cpp
+```
+[T638458 忙碌的老师](https://www.luogu.com.cn/problem/T638458?contestId=271047)
+
+```cpp
+#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include&lt;queue&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+int n,cnt=1;
+vector&lt;pair&lt;int,int&gt;&gt;a;
+priority_queue&lt;int,vector&lt;int&gt;,greater&lt;int&gt;&gt;qp;
+int main(){
+	ios::sync_with_stdio(0);
+	cin.tie(nullptr);
+	cin&gt;&gt;n;
+	a.resize(n);
+	for(auto &amp;&amp;i:a){
+		cin&gt;&gt;i.first&gt;&gt;i.second;
+	}
+	sort(a.begin(),a.end());
+	qp.push(a[0].second);
+	for(int i=1;i&lt;n;i++){
+		if(qp.top()&gt;=a[i].first){
+			qp.push(a[i].second);
+			cnt++;
+		}else{
+			qp.pop();
+			qp.push(a[i].second);
+		}
+	}
+	cout&lt;&lt;cnt;
 	return 0;
 }
 ```
