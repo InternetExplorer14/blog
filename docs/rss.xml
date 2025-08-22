@@ -1,5 +1,87 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Internet Explorer 14</title><link>https://InternetExplorer14.github.io/blog</link><description>Hanser!</description><copyright>Internet Explorer 14</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.luogu.com.cn/upload/usericon/1303746.png</url><title>avatar</title><link>https://InternetExplorer14.github.io/blog</link></image><lastBuildDate>Fri, 22 Aug 2025 07:23:46 +0000</lastBuildDate><managingEditor>Internet Explorer 14</managingEditor><ttl>60</ttl><webMaster>Internet Explorer 14</webMaster><item><title>蒟蒻的来做梦8.22总结</title><link>https://InternetExplorer14.github.io/blog/post/ju-ruo-de-lai-zuo-meng-8.22-zong-jie.html</link><description>本页面的所有内容均在[CC-BY-NC-ND](https://creativecommons.org/licenses/by-nc-nd/4.0/)和[SATA](https://github.com/zTrix/sata-license)协议之条款下提供，附加条款亦可能应用。</description><guid isPermaLink="true">https://InternetExplorer14.github.io/blog/post/ju-ruo-de-lai-zuo-meng-8.22-zong-jie.html</guid><pubDate>Fri, 22 Aug 2025 07:23:22 +0000</pubDate></item><item><title>蒟蒻的来做梦8.21总结</title><link>https://InternetExplorer14.github.io/blog/post/ju-ruo-de-lai-zuo-meng-8.21-zong-jie.html</link><description># [T639096 落落的去养植物](https://www.luogu.com.cn/problem/T639096?contestId=271047)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Internet Explorer 14</title><link>https://InternetExplorer14.github.io/blog</link><description>Hanser!</description><copyright>Internet Explorer 14</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.luogu.com.cn/upload/usericon/1303746.png</url><title>avatar</title><link>https://InternetExplorer14.github.io/blog</link></image><lastBuildDate>Fri, 22 Aug 2025 07:34:32 +0000</lastBuildDate><managingEditor>Internet Explorer 14</managingEditor><ttl>60</ttl><webMaster>Internet Explorer 14</webMaster><item><title>蒟蒻的来做梦8.22总结</title><link>https://InternetExplorer14.github.io/blog/post/ju-ruo-de-lai-zuo-meng-8.22-zong-jie.html</link><description># [T639114 大楼](https://www.luogu.com.cn/problem/T639114?contestId=271415)
+```cpp
+#include&lt;iostream&gt;
+#include&lt;vector&gt;
+using namespace std;
+int n;
+vector&lt;int&gt;v;
+int main(){
+	ios::sync_with_stdio(0);
+	cin.tie(nullptr);
+	cin&gt;&gt;n;
+	v.resize(n);
+	for(auto &amp;&amp;i:v){
+		cin&gt;&gt;i;
+	}
+	for(int i=1;i&lt;n;i++){
+		if(v[i]&gt;v[0]){
+			cout&lt;&lt;i+1;
+			return 0;
+		}
+	}
+	cout&lt;&lt;-1;
+	return 0;
+}
+```
+# [T639104 信奥大联赛](https://www.luogu.com.cn/problem/T639104?contestId=271415)
+
+```cpp
+#include&lt;iostream&gt;
+#include&lt;vector&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+int n,t;
+vector&lt;pair&lt;string,int&gt;&gt;v;
+int main(){
+	ios::sync_with_stdio(0);
+	cin.tie(nullptr);
+	cin&gt;&gt;n;
+	v.resize(n);
+	for(auto &amp;&amp;i:v){
+		cin&gt;&gt;i.first&gt;&gt;i.second;
+		t+=i.second;
+	}
+	sort(v.begin(),v.end());
+	cout&lt;&lt;v[t%n].first;
+	return 0;
+}
+```
+# [T638475 调酒大师](https://www.luogu.com.cn/problem/T638475?contestId=271415)
+
+```cpp
+#include&lt;iostream&gt;
+
+using namespace std;
+int t;
+int main(){
+	ios::sync_with_stdio(0);
+	cin.tie(nullptr);
+	cin&gt;&gt;t;
+	while(t--){
+		long long n,m;
+		cin&gt;&gt;n&gt;&gt;m;
+		auto byd=[n,m](){
+			auto check=[n,m](long long x){
+				return n+m&gt;=4*x&amp;&amp;min(n,m)&gt;=x;
+			};
+			long long l=-1,r=min(n,m)+1;
+			while(l+1&lt;r){
+				long long mid=(l+r)/2;
+				if(check(mid)){
+					l=mid;
+				}else{
+					r=mid;
+				}
+			}
+			return l;
+		};
+		cout&lt;&lt;byd()&lt;&lt;'\n';
+	}
+	return 0;
+}
+```
+本页面的所有内容均在[CC-BY-NC-ND](https://creativecommons.org/licenses/by-nc-nd/4.0/)和[SATA](https://github.com/zTrix/sata-license)协议之条款下提供，附加条款亦可能应用。</description><guid isPermaLink="true">https://InternetExplorer14.github.io/blog/post/ju-ruo-de-lai-zuo-meng-8.22-zong-jie.html</guid><pubDate>Fri, 22 Aug 2025 07:23:22 +0000</pubDate></item><item><title>蒟蒻的来做梦8.21总结</title><link>https://InternetExplorer14.github.io/blog/post/ju-ruo-de-lai-zuo-meng-8.21-zong-jie.html</link><description># [T639096 落落的去养植物](https://www.luogu.com.cn/problem/T639096?contestId=271047)
 
 ```cpp
 ```
