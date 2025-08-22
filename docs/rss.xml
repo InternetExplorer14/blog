@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Internet Explorer 14</title><link>https://InternetExplorer14.github.io/blog</link><description>Hanser!</description><copyright>Internet Explorer 14</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.luogu.com.cn/upload/usericon/1303746.png</url><title>avatar</title><link>https://InternetExplorer14.github.io/blog</link></image><lastBuildDate>Fri, 22 Aug 2025 07:34:32 +0000</lastBuildDate><managingEditor>Internet Explorer 14</managingEditor><ttl>60</ttl><webMaster>Internet Explorer 14</webMaster><item><title>蒟蒻的来做梦8.22总结</title><link>https://InternetExplorer14.github.io/blog/post/ju-ruo-de-lai-zuo-meng-8.22-zong-jie.html</link><description># [T639114 大楼](https://www.luogu.com.cn/problem/T639114?contestId=271415)
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Internet Explorer 14</title><link>https://InternetExplorer14.github.io/blog</link><description>Hanser!</description><copyright>Internet Explorer 14</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://cdn.luogu.com.cn/upload/usericon/1303746.png</url><title>avatar</title><link>https://InternetExplorer14.github.io/blog</link></image><lastBuildDate>Fri, 22 Aug 2025 07:37:09 +0000</lastBuildDate><managingEditor>Internet Explorer 14</managingEditor><ttl>60</ttl><webMaster>Internet Explorer 14</webMaster><item><title>蒟蒻的来做梦8.22总结</title><link>https://InternetExplorer14.github.io/blog/post/ju-ruo-de-lai-zuo-meng-8.22-zong-jie.html</link><description># [T639114 大楼](https://www.luogu.com.cn/problem/T639114?contestId=271415)
 ```cpp
 #include&lt;iostream&gt;
 #include&lt;vector&gt;
@@ -78,6 +78,57 @@ int main(){
 		};
 		cout&lt;&lt;byd()&lt;&lt;'\n';
 	}
+	return 0;
+}
+```
+# [T637889 箭头路径](https://www.luogu.com.cn/problem/T637889?contestId=271415)
+
+```cpp
+```
+# [T638238 传送门](https://www.luogu.com.cn/problem/T638238?contestId=271415)
+
+```cpp
+#include&lt;iostream&gt;
+#include&lt;queue&gt;
+#include&lt;map&gt;
+#include&lt;set&gt;
+using namespace std;
+int n,maxn;
+map&lt;int,vector&lt;int&gt;&gt;poltal;
+class bfs_class{
+	queue&lt;int&gt;q;
+	set&lt;int&gt;vis;
+public:
+	void run(){
+		q.push(1);
+		vis.insert(1);
+		while(q.size()){
+			auto tp=q.front();
+			q.pop();
+			maxn=max(maxn,tp);
+			if(poltal.find(tp)!=poltal.end()){
+				for(auto i:poltal[tp]){
+					if(vis.find(i)==vis.end()){
+						q.push(i);
+						vis.insert(i);
+					}
+				}
+			}
+		}
+	}
+}bfs;
+int main(){
+	ios::sync_with_stdio(0);
+	cin.tie(nullptr);
+	cin&gt;&gt;n;
+	for(int i=0;i&lt;n;i++){
+		int a,b;
+		cin&gt;&gt;a&gt;&gt;b;
+		poltal[a].push_back(b);
+		poltal[b].push_back(a);
+	}
+	bfs.run();
+	cout&lt;&lt;maxn;
 	return 0;
 }
 ```

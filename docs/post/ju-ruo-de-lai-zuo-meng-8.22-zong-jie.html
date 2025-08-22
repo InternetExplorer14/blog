@@ -92,6 +92,57 @@ int main(){
 	return 0;
 }
 ```
+# [T637889 箭头路径](https://www.luogu.com.cn/problem/T637889?contestId=271415)
+
+```cpp
+```
+# [T638238 传送门](https://www.luogu.com.cn/problem/T638238?contestId=271415)
+
+```cpp
+#include<iostream>
+#include<queue>
+#include<map>
+#include<set>
+using namespace std;
+int n,maxn;
+map<int,vector<int>>poltal;
+class bfs_class{
+	queue<int>q;
+	set<int>vis;
+public:
+	void run(){
+		q.push(1);
+		vis.insert(1);
+		while(q.size()){
+			auto tp=q.front();
+			q.pop();
+			maxn=max(maxn,tp);
+			if(poltal.find(tp)!=poltal.end()){
+				for(auto i:poltal[tp]){
+					if(vis.find(i)==vis.end()){
+						q.push(i);
+						vis.insert(i);
+					}
+				}
+			}
+		}
+	}
+}bfs;
+int main(){
+	ios::sync_with_stdio(0);
+	cin.tie(nullptr);
+	cin>>n;
+	for(int i=0;i<n;i++){
+		int a,b;
+		cin>>a>>b;
+		poltal[a].push_back(b);
+		poltal[b].push_back(a);
+	}
+	bfs.run();
+	cout<<maxn;
+	return 0;
+}
+```
 本页面的所有内容均在[CC-BY-NC-ND](https://creativecommons.org/licenses/by-nc-nd/4.0/)和[SATA](https://github.com/zTrix/sata-license)协议之条款下提供，附加条款亦可能应用。">
 <meta property="og:title" content="蒟蒻的来做梦8.22总结">
 <meta property="og:description" content="# [T639114 大楼](https://www.luogu.com.cn/problem/T639114?contestId=271415)
@@ -173,6 +224,57 @@ int main(){
 		};
 		cout<<byd()<<'\n';
 	}
+	return 0;
+}
+```
+# [T637889 箭头路径](https://www.luogu.com.cn/problem/T637889?contestId=271415)
+
+```cpp
+```
+# [T638238 传送门](https://www.luogu.com.cn/problem/T638238?contestId=271415)
+
+```cpp
+#include<iostream>
+#include<queue>
+#include<map>
+#include<set>
+using namespace std;
+int n,maxn;
+map<int,vector<int>>poltal;
+class bfs_class{
+	queue<int>q;
+	set<int>vis;
+public:
+	void run(){
+		q.push(1);
+		vis.insert(1);
+		while(q.size()){
+			auto tp=q.front();
+			q.pop();
+			maxn=max(maxn,tp);
+			if(poltal.find(tp)!=poltal.end()){
+				for(auto i:poltal[tp]){
+					if(vis.find(i)==vis.end()){
+						q.push(i);
+						vis.insert(i);
+					}
+				}
+			}
+		}
+	}
+}bfs;
+int main(){
+	ios::sync_with_stdio(0);
+	cin.tie(nullptr);
+	cin>>n;
+	for(int i=0;i<n;i++){
+		int a,b;
+		cin>>a>>b;
+		poltal[a].push_back(b);
+		poltal[b].push_back(a);
+	}
+	bfs.run();
+	cout<<maxn;
 	return 0;
 }
 ```
@@ -319,6 +421,52 @@ vector&lt;pair&lt;string,<span class="pl-k">int</span>&gt;&gt;v;
 		};
 		cout&lt;&lt;<span class="pl-c1">byd</span>()&lt;&lt;<span class="pl-s"><span class="pl-pds">'</span><span class="pl-cce">\n</span><span class="pl-pds">'</span></span>;
 	}
+	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
+}</pre></div>
+<h1><a href="https://www.luogu.com.cn/problem/T637889?contestId=271415" rel="nofollow">T637889 箭头路径</a></h1>
+<div class="highlight highlight-source-c++"><pre class="notranslate"></pre></div>
+<h1><a href="https://www.luogu.com.cn/problem/T638238?contestId=271415" rel="nofollow">T638238 传送门</a></h1>
+<div class="highlight highlight-source-c++"><pre class="notranslate">#<span class="pl-k">include</span><span class="pl-s"><span class="pl-pds">&lt;</span>iostream<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span><span class="pl-s"><span class="pl-pds">&lt;</span>queue<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span><span class="pl-s"><span class="pl-pds">&lt;</span>map<span class="pl-pds">&gt;</span></span>
+#<span class="pl-k">include</span><span class="pl-s"><span class="pl-pds">&lt;</span>set<span class="pl-pds">&gt;</span></span>
+<span class="pl-k">using</span> <span class="pl-k">namespace</span> <span class="pl-en">std</span><span class="pl-k">;</span>
+<span class="pl-k">int</span> n,maxn;
+map&lt;<span class="pl-k">int</span>,vector&lt;<span class="pl-k">int</span>&gt;&gt;poltal;
+<span class="pl-k">class</span> <span class="pl-en">bfs_class</span>{
+	queue&lt;<span class="pl-k">int</span>&gt;q;
+	set&lt;<span class="pl-k">int</span>&gt;vis;
+<span class="pl-k">public:</span>
+	<span class="pl-k">void</span> <span class="pl-en">run</span>(){
+		q.<span class="pl-c1">push</span>(<span class="pl-c1">1</span>);
+		vis.<span class="pl-c1">insert</span>(<span class="pl-c1">1</span>);
+		<span class="pl-k">while</span>(q.<span class="pl-c1">size</span>()){
+			<span class="pl-k">auto</span> tp=q.<span class="pl-c1">front</span>();
+			q.<span class="pl-c1">pop</span>();
+			maxn=<span class="pl-c1">max</span>(maxn,tp);
+			<span class="pl-k">if</span>(poltal.<span class="pl-c1">find</span>(tp)!=poltal.<span class="pl-c1">end</span>()){
+				<span class="pl-k">for</span>(<span class="pl-k">auto</span> i:poltal[tp]){
+					<span class="pl-k">if</span>(vis.<span class="pl-c1">find</span>(i)==vis.<span class="pl-c1">end</span>()){
+						q.<span class="pl-c1">push</span>(i);
+						vis.<span class="pl-c1">insert</span>(i);
+					}
+				}
+			}
+		}
+	}
+}bfs;
+<span class="pl-k">int</span> <span class="pl-en">main</span>(){
+	<span class="pl-c1">ios::sync_with_stdio</span>(<span class="pl-c1">0</span>);
+	cin.<span class="pl-c1">tie</span>(<span class="pl-c1">nullptr</span>);
+	cin&gt;&gt;n;
+	<span class="pl-k">for</span>(<span class="pl-k">int</span> i=<span class="pl-c1">0</span>;i&lt;n;i++){
+		<span class="pl-k">int</span> a,b;
+		cin&gt;&gt;a&gt;&gt;b;
+		poltal[a].<span class="pl-c1">push_back</span>(b);
+		poltal[b].<span class="pl-c1">push_back</span>(a);
+	}
+	bfs.<span class="pl-c1">run</span>();
+	cout&lt;&lt;maxn;
 	<span class="pl-k">return</span> <span class="pl-c1">0</span>;
 }</pre></div>
 <p>本页面的所有内容均在<a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="nofollow">CC-BY-NC-ND</a>和<a href="https://github.com/zTrix/sata-license">SATA</a>协议之条款下提供，附加条款亦可能应用</p></div>
